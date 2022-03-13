@@ -27,7 +27,7 @@ NOTE: if you don't care about the tutorial, skip to the bottom and download the 
     public Camera drawingCamera;
     void Start()
     {
-        rawImage = GetComponent&lt;RawImage&gt;();
+        rawImage = GetComponent<RawImage>();
 
         brushTexture.wrapMode = TextureWrapMode.Clamp;
         brushMaterial.mainTexture = brushTexture;
@@ -71,7 +71,8 @@ I will have a Unity Package at the bottom of the tutorial with it all correctly 
 
 # 2. Basic Mouse Drawing (Bad)
 
-```void Update()
+```
+    void Update()
     {
         Draw();
     }
@@ -85,14 +86,17 @@ I will have a Unity Package at the bottom of the tutorial with it all correctly 
 
         brushMaterial.color = brushColor;
         DrawBrush(mousePosition);
-    }            </code></pre>
+    }
+```
 
-            <p>Even though this works, if the mouse moves too fast, there will be gaps in the drawing.
+Even though this works, if the mouse moves too fast, there will be gaps in the drawing.
 
 
-            <h3>3. Better Mouse Drawing (Good)</h3><hr>
-            <p>This method interpolates between the previous and current mouse positions and draws points in between, making the drawing look seamless.
-            <pre><code>    void Update()
+# 3. Better Mouse Drawing (Good)
+This method interpolates between the previous and current mouse positions and draws points in between, making the drawing look seamless.
+
+```
+    void Update()
     {
         Draw();
     }
@@ -197,7 +201,7 @@ public class DrawingScript : MonoBehaviour
 
     void Start()
     {
-        rawImage = GetComponent&lt;RawImage&gt;();
+        rawImage = GetComponent<RawImage>();
 
         brushTexture.wrapMode = TextureWrapMode.Clamp;
         brushMaterial.mainTexture = brushTexture;
@@ -253,7 +257,7 @@ public class DrawingScript : MonoBehaviour
 
         Vector2[] points = new Vector2[num];
 
-        for (int i = 0; i &lt; num; i++)
+        for (int i = 0; i < num; i++)
             points[i] = a + dir * i * spacing;
 
         return points;
