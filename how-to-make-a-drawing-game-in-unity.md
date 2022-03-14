@@ -14,7 +14,7 @@ NOTE: if you don't care about the tutorial, skip to the bottom and download the 
 
 # 1. Drawing Code + Setup
 
-```
+```c
     public Texture2D brushTexture;
     public Mesh brushMesh;
     public Material brushMaterial;
@@ -71,7 +71,7 @@ I will have a Unity Package at the bottom of the tutorial with it all correctly 
 
 # 2. Basic Mouse Drawing (Bad)
 
-```
+```c
     void Update()
     {
         Draw();
@@ -95,7 +95,7 @@ Even though this works, if the mouse moves too fast, there will be gaps in the d
 # 3. Better Mouse Drawing (Good)
 This method interpolates between the previous and current mouse positions and draws points in between, making the drawing look seamless.
 
-```
+```c
     void Update()
     {
         Draw();
@@ -145,7 +145,7 @@ Now you have everything you need to make a drawing game. Keep reading for more t
 
 
 # 4. Clearing the Canvas
-```
+```c
     public void ClearCanvas()
     {
         RenderTexture screen = RenderTexture.active;
@@ -181,7 +181,7 @@ Here is a tutorial on [how to import Unity Packages](https://docs.unity3d.com/Ma
 
 Also, here is the full DrawingScript.
 
-```
+```c
 using UnityEngine;
 using UnityEngine.UI;
 
